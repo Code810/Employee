@@ -1,9 +1,5 @@
 ﻿using Employee.Domain.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Employee.Domain.Models
 {
@@ -17,24 +13,23 @@ namespace Employee.Domain.Models
         public DateTime Birthday { get; set; }
         public int Salary { get; set; }
 
-        public static Persons[] ListOfMechanic = new Persons[16];
+        private static  Persons[] ListOfMechanic = new Persons[0];
         public Persons(DateTime birthday)
         {
             Birthday=birthday;
             _id++;
             Id = _id;
-            Age = AgeCaculate();
         }
 
         public void SearchEmployee(DateTime min,DateTime max)
         {
             foreach (var item in ListOfMechanic)
             {
-                if(item.Birthday.Year>min.Year &&  item.Birthday.Year<max.Year)
+                if(item.Birthday>min &&  item.Birthday<max)
                 {
                     if (item.Salary>2000)
                     {
-                        Console.WriteLine($"Id:{Id} Name:{Name} Surname:{SurName}");
+                        Console.WriteLine($"Id:{item.Id} Name:{item.Name} Surname:{item.SurName} Age:{item.Age}");
                     }
                 }
             }
@@ -42,17 +37,18 @@ namespace Employee.Domain.Models
             
         }
 
-        public Persons[] EmployeeAdd(Persons mechanic)
+        public void EmployeeAdd(Persons mechanic)
         {
-            
-            ListOfMechanic[mechanic.Id-1]=mechanic;
-            return ListOfMechanic;
+
+            Array.Resize(ref ListOfMechanic, ListOfMechanic.Length + 1);
+            ListOfMechanic[ListOfMechanic.Length-1] = mechanic;
         }
 
         public int AgeCaculate()
         {
             
             int age = (int)((DateTime.Now - Birthday).TotalDays / 365.242199);
+            Age= age;
            return age;
         }
     }

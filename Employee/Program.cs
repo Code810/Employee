@@ -1,4 +1,5 @@
 ﻿
+using Employee.Domain.Interface;
 using Employee.Domain.Models;
 using Employee.Domain.Services;
 
@@ -12,24 +13,35 @@ using Employee.Domain.Services;
 
 #region task2
 
-Persons mechanic1 = new(new DateTime(1991, 09, 01))
+Persons person1 = new(new DateTime(2003, 09, 01))
 {
     Name = "Nadir",
     SurName = "Shirinbayli",
-    Salary = 2500
+    Salary = 2500,
 };
-mechanic1.EmployeeAdd(mechanic1);
+person1.AgeCaculate();
+person1.EmployeeAdd(person1);
 
-
-Persons mechanic2 = new(new DateTime(1991, 09, 01))
+Persons person2 = new(new DateTime(1998, 11, 01))
 {
-    Name = "Samir",
-    SurName = "Shirinbayli",
-    Salary = 1900
+    Name = "Name2",
+    SurName = "Surname2",
+    Salary = 1500,
 };
-mechanic1.EmployeeAdd(mechanic1);
+person2.AgeCaculate();
+person2.EmployeeAdd(person2);
 
-mechanic1.SearchEmployee(new DateTime(1768, 09, 01), new DateTime(2022, 09, 01));
+Persons person3 = new(new DateTime(1992, 11, 01))
+{
+    Name = "Name3",
+    SurName = "Surname3",
+    Salary = 2500,
+};
+person3.AgeCaculate();
+person3.EmployeeAdd(person3);
+
+person3.SearchEmployee(new DateTime(1991, 01, 01), new DateTime(2002, 12, 01));
+
 
 
 
