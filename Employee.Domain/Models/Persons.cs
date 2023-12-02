@@ -26,12 +26,9 @@ namespace Employee.Domain.Models
             int count = 0;
             foreach (var item in ListOfMechanic)
             {
-                if(item.Birthday>min &&  item.Birthday<max)
+                if(item.Birthday>min &&  item.Birthday<max&& item.Salary > salary)
                 {
-                    if (item.Salary>salary)
-                    {
                         count++;
-                    }
                 }
             }
 
