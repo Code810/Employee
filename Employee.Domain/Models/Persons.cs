@@ -21,20 +21,21 @@ namespace Employee.Domain.Models
             Id = _id;
         }
 
-        public void SearchEmployee(DateTime min,DateTime max)
+        public void SearchEmployeeCount(DateTime min,DateTime max,int salary)
         {
+            int count = 0;
             foreach (var item in ListOfMechanic)
             {
                 if(item.Birthday>min &&  item.Birthday<max)
                 {
-                    if (item.Salary>2000)
+                    if (item.Salary>salary)
                     {
-                        Console.WriteLine($"Id:{item.Id} Name:{item.Name} Surname:{item.SurName} Age:{item.Age}");
+                        count++;
                     }
                 }
             }
 
-            
+            Console.WriteLine(count);
         }
 
         public void EmployeeAdd(Persons mechanic)

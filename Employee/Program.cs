@@ -26,7 +26,7 @@ Persons person2 = new(new DateTime(1998, 11, 01))
 {
     Name = "Name2",
     SurName = "Surname2",
-    Salary = 1500,
+    Salary = 2500,
 };
 person2.AgeCaculate();
 person2.EmployeeAdd(person2);
@@ -40,7 +40,7 @@ Persons person3 = new(new DateTime(1992, 11, 01))
 person3.AgeCaculate();
 person3.EmployeeAdd(person3);
 
-person3.SearchEmployee(new DateTime(1991, 01, 01), new DateTime(2002, 12, 01));
+person3.SearchEmployeeCount(new DateTime(1991, 01, 01), new DateTime(2002, 12, 01),2000);
 
 
 

@@ -8,6 +8,6 @@ namespace Employee.Domain.Interface
 {
       interface ISearch
     {
-        void SearchEmployee(DateTime min, DateTime max);
+        void SearchEmployeeCount(DateTime min, DateTime max, int salary);
     }
 }
