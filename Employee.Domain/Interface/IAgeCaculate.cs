@@ -8,6 +8,6 @@ namespace Employee.Domain.Interface
 {
     public interface IAgeCaculate
     {
-        int AgeCaculate();
+        void AgeCaculate();
     }
 }

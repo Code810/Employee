@@ -39,17 +39,14 @@ namespace Employee.Domain.Models
 
         public void EmployeeAdd(Persons mechanic)
         {
-
             Array.Resize(ref ListOfMechanic, ListOfMechanic.Length + 1);
             ListOfMechanic[ListOfMechanic.Length-1] = mechanic;
         }
 
-        public int AgeCaculate()
+        public void AgeCaculate()
         {
-            
             int age = (int)((DateTime.Now - Birthday).TotalDays / 365.242199);
             Age= age;
-           return age;
         }
     }
 }
